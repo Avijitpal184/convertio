@@ -76,7 +76,7 @@ export default function ConverterMaincomp() {
       }
     }
     dispatch(setConvertedImages(converted));
-    console.log(converted);
+    // console.log(converted);
     dispatch(setStatus("converted"));
   };
 
