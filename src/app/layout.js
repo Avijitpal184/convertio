@@ -6,6 +6,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import Header from "@/components/custome-components/Header";
 import { Toaster } from "@/components/ui/sonner";
 import ReduxProvider from "./redux/providers";
+import { Suspense } from "react";
 
 const poppins = Poppins({
   variable: "--font-sans",
@@ -28,7 +29,6 @@ export const metadata = {
   title: "Image converter - Convertio",
   description:
     "Convert your images to various formats with our easy-to-use online image converter tool.",
-
 };
 
 export default function RootLayout({ children }) {
@@ -46,11 +46,13 @@ export default function RootLayout({ children }) {
           <SidebarProvider>
             <AppSidebar />
             <div className="bg-background w-full">
-              <Header />
+              <Suspense fallback={null}>
+                <Header />
+              </Suspense>
               <main className="w-full container mx-auto px-4 py-8">
                 <ReduxProvider>{children}</ReduxProvider>
               </main>
-              <Toaster  position="top-right" />
+              <Toaster position="top-right" />
             </div>
           </SidebarProvider>
         </ThemeProvider>

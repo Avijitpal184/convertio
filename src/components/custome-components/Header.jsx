@@ -17,7 +17,6 @@ export default function Header() {
     setFullUrl(`${window.location.origin}${pathName}${params}`);
   }, [pathName, searchParams]);
 
-
   return (
     <header className="sticky top-0 px-4 z-50 w-full h-14 backdrop-blur py-1 bg-background/95 supports-[backdrop-filter]:bg-background/90">
       <div className="flex items-center h-full justify-between">
